@@ -1,0 +1,54 @@
+server:
+  port: ${port}
+spring:
+  security:
+    jjwt:
+      secret: ${jwt.secret}
+      expiration: ${jwt.expiration}
+      iteration: ${jwt.iteration}
+      keylength: ${jwt.keylength}
+  data:
+    mongodb:
+      database: ${database.name}
+      uri: ${database.uri}
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  mail:
+    host: ${mail.host}
+    port: ${mail.port}
+    protocol: ${mail.protocol}
+    username: ${mail.username}
+    password: ${mail.password}
+    properties:
+      mail:
+        transport:
+          protokol: ${mail.protocol}
+        smpts:
+          auth: true
+          starttls:
+            enable: true
+          timeout: 8000
+  profiles:
+    active: dev
+support:
+  email: ${support.email}
+  password: ${support.password}
+  phone: ${support.phone}
+  additionalPhone: ${support.additionalPhone}
+  name: ${support.name}
+  secure: ${support.secure}
+  folder: ${support.folder}
+  newCastingSubject: ${support.newCastingSubject}
+  newAnswerSubject: ${support.newAnswerSubject}
+  newQuestionSubject: ${support.newQuestionSubject}
+  newUserSubject: ${support.new}
+  welcomeWithLink: ${support.welcomeWithLink}
+  passwordReminderLink: ${support.passwordReminderLink}
+  passwordReminderText: ${support.passwordReminderText}
+  passwordResetTokenDuration: ${support.passwordResetTokenDuration}
+smsGateway:
+  url: ${smsGateway.url}
+  uri: ${smsGateway.uri}
+  token: ${smsGateway.token}
+  text: ${smsGateway.text}
+  deviceId: ${smsGateway.deviceId}
