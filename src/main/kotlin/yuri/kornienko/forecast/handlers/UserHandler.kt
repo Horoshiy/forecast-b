@@ -39,7 +39,7 @@ class UserHandler(private val service: UserService, private val encoder: PBKDF2E
 
     fun getItems(request: ServerRequest) = ServerResponse.ok()
             .contentType(MediaType.APPLICATION_JSON)
-            .body(service.all(request.queryParams()), User::class.java)
+            .body(service.all(request.queryParams()), SimpleUserDto::class.java)
             .switchIfEmpty(ServerResponse.notFound().build())
 
     fun getPageNumbers(request: ServerRequest) = ServerResponse.ok()
